@@ -19,7 +19,7 @@ public class CommentBackend {
 
     public List<Comment> getCommentsForCompositionList(String compositionId) {
         URI url = UriComponentsBuilder
-                .fromHttpUrl(endpoint + "comments/" + compositionId)
+                .fromHttpUrl(endpoint + "comments/for-composition/" + compositionId)
                 .build()
                 .encode()
                 .toUri();

@@ -19,7 +19,7 @@ public class ReactionBackend {
 
     public List<Reaction> getReactionsForCommentList(String commentId) {
         URI url = UriComponentsBuilder
-                .fromHttpUrl(endpoint + "reactions/" + commentId)
+                .fromHttpUrl(endpoint + "reactions/for-comment/" + commentId)
                 .build()
                 .encode()
                 .toUri();

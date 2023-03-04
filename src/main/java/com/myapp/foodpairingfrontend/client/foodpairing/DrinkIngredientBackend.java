@@ -19,7 +19,7 @@ public class DrinkIngredientBackend {
 
     public List<DrinkIngredient> getDrinkIngredientsForDrinkList(String drinkId) {
         URI url = UriComponentsBuilder
-                .fromHttpUrl(endpoint + "drinkingredients/" + drinkId)
+                .fromHttpUrl(endpoint + "drinkingredients/for-drink/" + drinkId)
                 .build()
                 .encode()
                 .toUri();
