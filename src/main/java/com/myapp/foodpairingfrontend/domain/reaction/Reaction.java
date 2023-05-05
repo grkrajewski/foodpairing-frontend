@@ -7,8 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
-
 @Getter
 @Setter
 @NoArgsConstructor
@@ -23,7 +21,7 @@ public class Reaction {
     private String description;
 
     @JsonProperty("created")
-    private Date created;
+    private String created;
 
     @JsonProperty("commentId")
     private Long commentId;

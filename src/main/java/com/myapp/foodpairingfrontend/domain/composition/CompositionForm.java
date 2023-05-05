@@ -2,6 +2,7 @@ package com.myapp.foodpairingfrontend.domain.composition;
 
 import com.myapp.foodpairingfrontend.domain.drink.Drink;
 import com.myapp.foodpairingfrontend.domain.drink.DrinkService;
+import com.myapp.foodpairingfrontend.utils.DateTimeConverter;
 import com.myapp.foodpairingfrontend.view.CompositionView;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -10,8 +11,8 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class CompositionForm extends FormLayout {
 
@@ -50,7 +51,7 @@ public class CompositionForm extends FormLayout {
                 composition.getId(),
                 composition.getDishId(),
                 savedDrink.getId(),
-                new Date(),
+                DateTimeConverter.convertLocalDateTimeToString(LocalDateTime.now()),
                 new ArrayList<>()
         );
         compositionService.updateComposition(updatedComposition);

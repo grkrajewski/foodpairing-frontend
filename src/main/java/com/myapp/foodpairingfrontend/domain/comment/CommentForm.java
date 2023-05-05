@@ -1,5 +1,6 @@
 package com.myapp.foodpairingfrontend.domain.comment;
 
+import com.myapp.foodpairingfrontend.utils.DateTimeConverter;
 import com.myapp.foodpairingfrontend.view.CommentAndRatingView;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -8,8 +9,8 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class CommentForm extends FormLayout {
 
@@ -41,7 +42,7 @@ public class CommentForm extends FormLayout {
 
     private void save() {
         Comment comment = binder.getBean();
-        comment.setCreated(new Date());
+        comment.setCreated(DateTimeConverter.convertLocalDateTimeToString(LocalDateTime.now()));
         comment.setReactionList(new ArrayList<>());
         commentService.saveComment(comment);
         commentAndRatingView.refreshComment();
@@ -50,7 +51,7 @@ public class CommentForm extends FormLayout {
 
     private void update() {
         Comment comment = binder.getBean();
-        comment.setCreated(new Date());
+        comment.setCreated(DateTimeConverter.convertLocalDateTimeToString(LocalDateTime.now()));
         comment.setReactionList(new ArrayList<>());
         commentService.updateComment(comment);
         commentAndRatingView.refreshComment();

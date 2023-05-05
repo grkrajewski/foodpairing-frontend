@@ -8,7 +8,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -25,7 +24,7 @@ public class Comment {
     private String description;
 
     @JsonProperty("created")
-    private Date created;
+    private String created;
 
     @JsonProperty("compositionId")
     private Long compositionId;
