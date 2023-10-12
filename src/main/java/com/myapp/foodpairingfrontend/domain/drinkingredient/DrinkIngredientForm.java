@@ -28,8 +28,11 @@ public class DrinkIngredientForm extends FormLayout {
         this.drinkView = drinkView;
         HorizontalLayout buttons = new HorizontalLayout(save, update, delete);
         save.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        save.getStyle().set("background-color", "#5F9EA0");
         update.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        update.getStyle().set("background-color", "#5F9EA0");
         delete.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        delete.getStyle().set("background-color", "#5F9EA0");
         add(drinkId, name, measure, buttons);
         binder.bindInstanceFields(this);
         save.addClickListener(event -> save());

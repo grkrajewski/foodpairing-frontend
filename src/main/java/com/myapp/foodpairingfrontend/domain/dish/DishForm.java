@@ -23,6 +23,7 @@ public class DishForm extends FormLayout {
     public DishForm(DishView dishView) {
         this.dishView = dishView;
         delete.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        delete.getStyle().set("background-color", "#5F9EA0");
         name.setReadOnly(true);
         readyInMinutes.setReadOnly(true);
         servings.setReadOnly(true);

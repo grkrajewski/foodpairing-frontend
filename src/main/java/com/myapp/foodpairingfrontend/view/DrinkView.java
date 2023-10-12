@@ -31,6 +31,7 @@ public class DrinkView extends VerticalLayout {
     private TextField findByDrinkId = new TextField();
 
     public DrinkView() {
+        getStyle().set("background-color", "#F5F5F5");
         add(buttonBar.createButtonBar());
 
         gridDrink.setColumns("id", "name", "alcoholic", "glass", "instructions");
@@ -49,6 +50,7 @@ public class DrinkView extends VerticalLayout {
             drinkIngredientForm.setDrinkIngredient(new DrinkIngredient());
         });
         addNewIngredient.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        addNewIngredient.getStyle().set("background-color", "#5F9EA0");
         gridDrinkIngredient.setColumns("drinkId", "name", "measure");
         HorizontalLayout drinkIngredientMainContent = new HorizontalLayout(gridDrinkIngredient, drinkIngredientForm);
         drinkIngredientMainContent.setSizeFull();

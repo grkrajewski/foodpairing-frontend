@@ -33,7 +33,9 @@ public class CompositionForm extends FormLayout {
         this.compositionView = compositionView;
         HorizontalLayout buttons = new HorizontalLayout(changeDrink, delete);
         changeDrink.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        changeDrink.getStyle().set("background-color", "#5F9EA0");
         delete.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        delete.getStyle().set("background-color", "#5F9EA0");
         id.setReadOnly(true);
         dishId.setReadOnly(true);
         drinkId.setReadOnly(true);

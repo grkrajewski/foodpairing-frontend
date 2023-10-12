@@ -39,6 +39,7 @@ public class CommentAndRatingView extends VerticalLayout {
     private TextField findByCommentId = new TextField();
 
     public CommentAndRatingView() {
+        getStyle().set("background-color", "#F5F5F5");
         add(buttonBar.createButtonBar());
 
         gridComposition.setColumns("id", "dishId", "drinkId", "created");
@@ -55,6 +56,7 @@ public class CommentAndRatingView extends VerticalLayout {
             commentForm.setComment(new Comment());
         });
         addNewComment.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        addNewComment.getStyle().set("background-color", "#5F9EA0");
         createFindByCompositionField();
         gridComment.setColumns("compositionId", "description", "created");
         HorizontalLayout commentMainContent = new HorizontalLayout(gridComment, commentForm);
@@ -73,6 +75,7 @@ public class CommentAndRatingView extends VerticalLayout {
             reactionForm.setReaction(new Reaction());
         });
         addNewReaction.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        addNewReaction.getStyle().set("background-color", "#5F9EA0");
         createFindByCommentField();
         gridReaction.setColumns("commentId", "description", "created");
         HorizontalLayout reactionMainContent = new HorizontalLayout(gridReaction, reactionForm);

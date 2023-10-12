@@ -26,6 +26,7 @@ public class CompositionView extends VerticalLayout {
     private Grid<Composition> gridComposition = new Grid<>(Composition.class);
 
     public CompositionView() {
+        getStyle().set("background-color", "#F5F5F5");
         add(buttonBar.createButtonBar());
 
         gridDish.setColumns("id", "name", "readyInMinutes", "servings", "recipeUrl");

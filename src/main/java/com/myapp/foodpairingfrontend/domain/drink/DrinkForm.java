@@ -24,6 +24,7 @@ public class DrinkForm extends FormLayout {
     public DrinkForm(DrinkView drinkView) {
         this.drinkView = drinkView;
         update.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        update.getStyle().set("background-color", "#5F9EA0");
         id.setReadOnly(true);
         add(id, name, alcoholic, glass, instructions, update);
         binder.bindInstanceFields(this);

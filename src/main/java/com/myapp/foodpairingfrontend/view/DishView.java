@@ -3,6 +3,7 @@ package com.myapp.foodpairingfrontend.view;
 import com.myapp.foodpairingfrontend.view.component.ButtonBar;
 import com.myapp.foodpairingfrontend.domain.dish.*;
 import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -24,6 +25,7 @@ public class DishView extends VerticalLayout{
     private TextField findByNameFragment = new TextField();
 
     public DishView() {
+        getStyle().set("background-color", "#F5F5F5");
         add(buttonBar.createButtonBar());
 
         createSearchField();
@@ -34,6 +36,13 @@ public class DishView extends VerticalLayout{
         add(findByNameFragment, spoonacularDishMainContent);
         setSizeFull();
         gridSpoonacularDish.asSingleSelect().addValueChangeListener(event -> spoonacularDishForm.setSpoonacularDish(gridSpoonacularDish.asSingleSelect().getValue()));
+
+        Label titleLabel = new Label("Dishes saved in Foodpairing Database");
+        titleLabel.getElement().getThemeList().add("h3");
+        titleLabel.getElement().getStyle().set("font-weight", "bold");
+        titleLabel.getElement().getStyle().set("font-size", "20px");
+        titleLabel.getElement().getStyle().set("text-decoration", "underline");
+        add(titleLabel);
 
         gridDish.setColumns("name", "readyInMinutes", "servings", "recipeUrl");
         HorizontalLayout dishMainContent = new HorizontalLayout(gridDish, dishForm);

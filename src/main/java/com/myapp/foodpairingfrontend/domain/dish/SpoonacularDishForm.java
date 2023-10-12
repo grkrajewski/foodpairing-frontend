@@ -25,6 +25,7 @@ public class SpoonacularDishForm extends FormLayout {
     public SpoonacularDishForm(DishView dishView) {
         this.dishView = dishView;
         addDish.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        addDish.getStyle().set("background-color", "#5F9EA0");
         add(name, readyInMinutes, servings, recipeUrl, addDish);
         binder.bindInstanceFields(this);
         addDish.addClickListener(event -> save());

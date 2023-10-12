@@ -29,8 +29,11 @@ public class ReactionForm extends FormLayout {
         this.commentAndRatingView = commentAndRatingView;
         HorizontalLayout buttons = new HorizontalLayout(save, update, delete);
         save.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        save.getStyle().set("background-color", "#5F9EA0");
         update.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        update.getStyle().set("background-color", "#5F9EA0");
         delete.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        delete.getStyle().set("background-color", "#5F9EA0");
         id.setReadOnly(true);
         add(id, commentId, description, buttons);
         binder.bindInstanceFields(this);

@@ -32,6 +32,7 @@ public class DishToCompositionForm extends FormLayout {
     public DishToCompositionForm(CompositionView compositionView) {
         this.compositionView = compositionView;
         createComposition.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        createComposition.getStyle().set("background-color", "#5F9EA0");
         id.setReadOnly(true);
         name.setReadOnly(true);
         readyInMinutes.setReadOnly(true);
