@@ -10,6 +10,9 @@ import com.myapp.foodpairingfrontend.view.component.ButtonBar;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.grid.HeaderRow;
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -35,6 +38,15 @@ public class DrinkView extends VerticalLayout {
         add(buttonBar.createButtonBar());
 
         gridDrink.setColumns("id", "name", "alcoholic", "glass", "instructions");
+        Div titleDiv = new Div();
+        H3 title = new H3("DRINKS IN DATABASE");
+        title.getStyle().set("font-size", "16px");
+        title.getStyle().set("font-weight", "bold");
+        title.getStyle().set("margin", "0");
+        titleDiv.add(title);
+        HeaderRow headerRow = gridDrink.prependHeaderRow();
+        HeaderRow.HeaderCell titleCell = headerRow.join(gridDrink.getColumns().toArray(new Grid.Column[0]));
+        titleCell.setComponent(titleDiv);
         HorizontalLayout drinkMainContent = new HorizontalLayout(gridDrink, drinkForm);
         drinkMainContent.setSizeFull();
         gridDrink.setSizeFull();
@@ -52,6 +64,15 @@ public class DrinkView extends VerticalLayout {
         addNewIngredient.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         addNewIngredient.getStyle().set("background-color", "#5F9EA0");
         gridDrinkIngredient.setColumns("drinkId", "name", "measure");
+        Div titleDivDrinkIngredient = new Div();
+        H3 titleDrinkIngredient = new H3("MODIFY THE DRINK INGREDIENTS BELOW AS YOU WANT");
+        titleDrinkIngredient.getStyle().set("font-size", "16px");
+        titleDrinkIngredient.getStyle().set("font-weight", "bold");
+        titleDrinkIngredient.getStyle().set("margin", "0");
+        titleDivDrinkIngredient.add(titleDrinkIngredient);
+        HeaderRow headerRowDrinkIngredient = gridDrinkIngredient.prependHeaderRow();
+        HeaderRow.HeaderCell titleCellDrinkIngredient = headerRowDrinkIngredient.join(gridDrinkIngredient.getColumns().toArray(new Grid.Column[0]));
+        titleCellDrinkIngredient.setComponent(titleDivDrinkIngredient);
         HorizontalLayout drinkIngredientMainContent = new HorizontalLayout(gridDrinkIngredient, drinkIngredientForm);
         drinkIngredientMainContent.setSizeFull();
         gridDrinkIngredient.setSizeFull();
@@ -72,7 +93,7 @@ public class DrinkView extends VerticalLayout {
     }
 
     public void createSearchField() {
-        findByDrinkId.setPlaceholder("Search by dish id...");
+        findByDrinkId.setPlaceholder("Search by drink id...");
         findByDrinkId.setClearButtonVisible(true);
         findByDrinkId.addValueChangeListener(e -> refreshDrinkIngredient());
     }

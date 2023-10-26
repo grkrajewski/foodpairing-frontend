@@ -3,7 +3,9 @@ package com.myapp.foodpairingfrontend.view;
 import com.myapp.foodpairingfrontend.view.component.ButtonBar;
 import com.myapp.foodpairingfrontend.domain.dish.*;
 import com.vaadin.flow.component.grid.Grid;
-import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.grid.HeaderRow;
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -37,14 +39,16 @@ public class DishView extends VerticalLayout{
         setSizeFull();
         gridSpoonacularDish.asSingleSelect().addValueChangeListener(event -> spoonacularDishForm.setSpoonacularDish(gridSpoonacularDish.asSingleSelect().getValue()));
 
-        Label titleLabel = new Label("Dishes saved in Foodpairing Database");
-        titleLabel.getElement().getThemeList().add("h3");
-        titleLabel.getElement().getStyle().set("font-weight", "bold");
-        titleLabel.getElement().getStyle().set("font-size", "20px");
-        titleLabel.getElement().getStyle().set("text-decoration", "underline");
-        add(titleLabel);
-
         gridDish.setColumns("name", "readyInMinutes", "servings", "recipeUrl");
+        Div titleDiv = new Div();
+        H3 title = new H3("DISHES IN \"FOODPAIRING\" DATABASE");
+        title.getStyle().set("font-size", "16px");
+        title.getStyle().set("font-weight", "bold");
+        title.getStyle().set("margin", "0");
+        titleDiv.add(title);
+        HeaderRow headerRow = gridDish.prependHeaderRow();
+        HeaderRow.HeaderCell titleCell = headerRow.join(gridDish.getColumns().toArray(new Grid.Column[0]));
+        titleCell.setComponent(titleDiv);
         HorizontalLayout dishMainContent = new HorizontalLayout(gridDish, dishForm);
         dishMainContent.setSizeFull();
         gridDish.setSizeFull();
