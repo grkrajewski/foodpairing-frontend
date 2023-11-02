@@ -69,7 +69,7 @@ public class CompositionView extends VerticalLayout {
         gridComposition.asSingleSelect().addValueChangeListener(event -> compositionForm.setComposition(gridComposition.asSingleSelect().getValue()));
     }
 
-    public void refreshDish() {
+    private void refreshDish() {
         gridDish.setItems(dishService.getDishes());
     }
 

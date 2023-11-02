@@ -119,7 +119,7 @@ public class CommentAndRatingView extends VerticalLayout {
         gridReaction.asSingleSelect().addValueChangeListener(event -> reactionForm.setReaction(gridReaction.asSingleSelect().getValue()));
     }
 
-    public void refreshComposition() {
+    private void refreshComposition() {
         gridComposition.setItems(compositionService.getCompositions());
     }
 

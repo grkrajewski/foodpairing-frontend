@@ -32,6 +32,15 @@ public class DishView extends VerticalLayout{
 
         createSearchField();
         gridSpoonacularDish.setColumns("name", "readyInMinutes", "servings", "recipeUrl");
+        Div titleDivSpoonacularDish = new Div();
+        H3 titleSpoonacularDish = new H3("SEARCH DISHES IN EXTERNAL DATABASE");
+        titleSpoonacularDish.getStyle().set("font-size", "16px");
+        titleSpoonacularDish.getStyle().set("font-weight", "bold");
+        titleSpoonacularDish.getStyle().set("margin", "0");
+        titleDivSpoonacularDish.add(titleSpoonacularDish);
+        HeaderRow headerRowSpoonacularDish = gridSpoonacularDish.prependHeaderRow();
+        HeaderRow.HeaderCell titleCellSpoonacularDish = headerRowSpoonacularDish.join(gridSpoonacularDish.getColumns().toArray(new Grid.Column[0]));
+        titleCellSpoonacularDish.setComponent(titleDivSpoonacularDish);
         HorizontalLayout spoonacularDishMainContent = new HorizontalLayout(gridSpoonacularDish, spoonacularDishForm);
         spoonacularDishMainContent.setSizeFull();
         gridSpoonacularDish.setSizeFull();
@@ -40,15 +49,15 @@ public class DishView extends VerticalLayout{
         gridSpoonacularDish.asSingleSelect().addValueChangeListener(event -> spoonacularDishForm.setSpoonacularDish(gridSpoonacularDish.asSingleSelect().getValue()));
 
         gridDish.setColumns("name", "readyInMinutes", "servings", "recipeUrl");
-        Div titleDiv = new Div();
-        H3 title = new H3("DISHES IN \"FOODPAIRING\" DATABASE");
-        title.getStyle().set("font-size", "16px");
-        title.getStyle().set("font-weight", "bold");
-        title.getStyle().set("margin", "0");
-        titleDiv.add(title);
-        HeaderRow headerRow = gridDish.prependHeaderRow();
-        HeaderRow.HeaderCell titleCell = headerRow.join(gridDish.getColumns().toArray(new Grid.Column[0]));
-        titleCell.setComponent(titleDiv);
+        Div titleDivDish = new Div();
+        H3 titleDish = new H3("DISHES IN \"FOODPAIRING\" DATABASE");
+        titleDish.getStyle().set("font-size", "16px");
+        titleDish.getStyle().set("font-weight", "bold");
+        titleDish.getStyle().set("margin", "0");
+        titleDivDish.add(titleDish);
+        HeaderRow headerRowDish = gridDish.prependHeaderRow();
+        HeaderRow.HeaderCell titleCellDish = headerRowDish.join(gridDish.getColumns().toArray(new Grid.Column[0]));
+        titleCellDish.setComponent(titleDivDish);
         HorizontalLayout dishMainContent = new HorizontalLayout(gridDish, dishForm);
         dishMainContent.setSizeFull();
         gridDish.setSizeFull();
@@ -58,7 +67,7 @@ public class DishView extends VerticalLayout{
         gridDish.asSingleSelect().addValueChangeListener(event -> dishForm.setDish(gridDish.asSingleSelect().getValue()));
     }
 
-    public void refreshSpoonacular() {
+    private void refreshSpoonacular() {
         gridSpoonacularDish.setItems(spoonacularDishService.getSpoonacularDishes(findByNameFragment.getValue()));
     }
 
@@ -66,7 +75,7 @@ public class DishView extends VerticalLayout{
         gridDish.setItems(dishService.getDishes());
     }
 
-    public void createSearchField() {
+    private void createSearchField() {
         findByNameFragment.setPlaceholder("Search dish by name...");
         findByNameFragment.setClearButtonVisible(true);
         findByNameFragment.addValueChangeListener(e -> refreshSpoonacular());

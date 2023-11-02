@@ -92,7 +92,7 @@ public class DrinkView extends VerticalLayout {
         gridDrinkIngredient.setItems(drinkIngredientService.getDrinkIngredientsForDrink(findByDrinkId.getValue()));
     }
 
-    public void createSearchField() {
+    private void createSearchField() {
         findByDrinkId.setPlaceholder("Search by drink id...");
         findByDrinkId.setClearButtonVisible(true);
         findByDrinkId.addValueChangeListener(e -> refreshDrinkIngredient());
