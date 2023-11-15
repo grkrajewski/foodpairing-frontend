@@ -36,6 +36,9 @@ public class DrinkView extends VerticalLayout {
     public DrinkView() {
         getStyle().set("background-color", "#F5F5F5");
         add(buttonBar.createButtonBar());
+        buttonBar.getDrink().getStyle().set("background-color", "#ADD8E6");
+        buttonBar.getDrink().getStyle().set("color", "black");
+        buttonBar.getDrink().getStyle().set("font-weight", "bold");
 
         gridDrink.setColumns("id", "name", "alcoholic", "glass", "instructions");
         Div titleDiv = new Div();

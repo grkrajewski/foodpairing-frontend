@@ -29,6 +29,9 @@ public class DishView extends VerticalLayout{
     public DishView() {
         getStyle().set("background-color", "#F5F5F5");
         add(buttonBar.createButtonBar());
+        buttonBar.getDish().getStyle().set("background-color", "#ADD8E6");
+        buttonBar.getDish().getStyle().set("color", "black");
+        buttonBar.getDish().getStyle().set("font-weight", "bold");
 
         createSearchField();
         gridSpoonacularDish.setColumns("name", "readyInMinutes", "servings", "recipeUrl");

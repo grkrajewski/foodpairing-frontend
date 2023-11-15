@@ -3,16 +3,18 @@ package com.myapp.foodpairingfrontend.view.component;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import lombok.Getter;
 
+@Getter
 public class ButtonBar {
+    private Button main = new Button("Main page");
+    private Button dish = new Button("Dishes");
+    private Button composition = new Button("Compositions");
+    private Button drink = new Button("Drinks");
+    private Button commentAndRating = new Button("Comments and ratings");
+
 
     public HorizontalLayout createButtonBar() {
-        Button main = new Button("Main page");
-        Button dish = new Button("Dishes");
-        Button composition = new Button("Compositions");
-        Button drink = new Button("Drinks");
-        Button commentAndRating = new Button("Comments and ratings");
-
         main.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_CONTRAST);
         dish.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_CONTRAST);
         composition.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_CONTRAST);

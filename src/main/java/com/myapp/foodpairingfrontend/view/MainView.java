@@ -22,6 +22,10 @@ public class MainView extends VerticalLayout {
 
     public MainView() {
         add(buttonBar.createButtonBar());
+        buttonBar.getMain().getStyle().set("background-color", "#ADD8E6");
+        buttonBar.getMain().getStyle().set("color", "black");
+        buttonBar.getMain().getStyle().set("font-weight", "bold");
+
         add("Choose your favourite dish, get a random drink to it :) ...... and check how it tastes together......, then comment compositions which were created. ");
 
         gridComposition.setColumns("id", "dishId", "drinkId", "created");

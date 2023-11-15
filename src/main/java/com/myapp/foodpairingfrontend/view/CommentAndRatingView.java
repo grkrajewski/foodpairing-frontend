@@ -44,6 +44,9 @@ public class CommentAndRatingView extends VerticalLayout {
     public CommentAndRatingView() {
         getStyle().set("background-color", "#F5F5F5");
         add(buttonBar.createButtonBar());
+        buttonBar.getCommentAndRating().getStyle().set("background-color", "#ADD8E6");
+        buttonBar.getCommentAndRating().getStyle().set("color", "black");
+        buttonBar.getCommentAndRating().getStyle().set("font-weight", "bold");
 
         gridComposition.setColumns("id", "dishId", "drinkId", "created");
         Div titleDivComposition = new Div();
