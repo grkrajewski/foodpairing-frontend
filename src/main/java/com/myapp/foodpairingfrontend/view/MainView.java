@@ -29,6 +29,7 @@ public class MainView extends VerticalLayout {
         add("Choose your favourite dish, get a random drink to it :) ...... and check how it tastes together......, then comment compositions which were created. ");
 
         gridComposition.setColumns("id", "dishId", "drinkId", "created");
+        gridComposition.getColumns().get(0).setHeader("Composition Id");
         Div titleDivComposition = new Div();
         H3 titleComposition = new H3("ALREADY SAVED COMPOSITIONS");
         titleComposition.getStyle().set("font-size", "16px");

@@ -16,7 +16,7 @@ public class DrinkIngredientForm extends FormLayout {
     private DrinkIngredientService drinkIngredientService = DrinkIngredientService.getInstance();
 
     private TextField drinkId = new TextField("Drink id");
-    private TextField name = new TextField("Name");
+    private TextField name = new TextField("Drink ingredient name");
     private TextField measure = new TextField("Measure");
 
     private Button save = new Button("Save");

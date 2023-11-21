@@ -35,6 +35,7 @@ public class DishView extends VerticalLayout{
 
         createSearchField();
         gridSpoonacularDish.setColumns("name", "readyInMinutes", "servings", "recipeUrl");
+        gridSpoonacularDish.getColumns().get(0).setHeader("Dish Name");
         Div titleDivSpoonacularDish = new Div();
         H3 titleSpoonacularDish = new H3("SEARCH DISHES IN EXTERNAL DATABASE");
         titleSpoonacularDish.getStyle().set("font-size", "16px");
@@ -52,6 +53,7 @@ public class DishView extends VerticalLayout{
         gridSpoonacularDish.asSingleSelect().addValueChangeListener(event -> spoonacularDishForm.setSpoonacularDish(gridSpoonacularDish.asSingleSelect().getValue()));
 
         gridDish.setColumns("name", "readyInMinutes", "servings", "recipeUrl");
+        gridDish.getColumns().get(0).setHeader("Dish Name");
         Div titleDivDish = new Div();
         H3 titleDish = new H3("DISHES IN \"FOODPAIRING\" DATABASE");
         titleDish.getStyle().set("font-size", "16px");

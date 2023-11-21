@@ -14,7 +14,7 @@ public class DrinkForm extends FormLayout {
 
     private TextField id = new TextField("Drink id");
     private TextField name = new TextField("Drink name");
-    private TextField alcoholic = new TextField("Alcoholic / Non-alcoholic");
+    private TextField alcoholic = new TextField("Type of drink");
     private TextField glass = new TextField("Proposed glass");
     private TextField instructions = new TextField("Recipe");
 

@@ -18,7 +18,7 @@ public class ReactionForm extends FormLayout {
 
     private TextField id = new TextField("Reaction id");
     private TextField commentId = new TextField("Comment id");
-    private TextField description = new TextField("Reaction (description)");
+    private TextField description = new TextField("Reaction");
 
     private Button save = new Button("Save");
     private Button update = new Button("Update");

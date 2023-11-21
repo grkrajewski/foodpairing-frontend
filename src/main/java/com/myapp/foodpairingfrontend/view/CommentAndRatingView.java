@@ -49,6 +49,7 @@ public class CommentAndRatingView extends VerticalLayout {
         buttonBar.getCommentAndRating().getStyle().set("font-weight", "bold");
 
         gridComposition.setColumns("id", "dishId", "drinkId", "created");
+        gridComposition.getColumns().get(0).setHeader("Composition Id");
         Div titleDivComposition = new Div();
         H3 titleComposition = new H3("COMPOSITIONS");
         titleComposition.getStyle().set("font-size", "16px");
@@ -74,6 +75,7 @@ public class CommentAndRatingView extends VerticalLayout {
         addNewComment.getStyle().set("background-color", "#5F9EA0");
         createFindByCompositionField();
         gridComment.setColumns("compositionId", "description", "created");
+        gridComment.getColumns().get(1).setHeader("Comment");
         Div titleDivComment = new Div();
         H3 titleComment = new H3("COMMENTS FOR COMPOSITION");
         titleComment.getStyle().set("font-size", "16px");
@@ -102,8 +104,9 @@ public class CommentAndRatingView extends VerticalLayout {
         addNewReaction.getStyle().set("background-color", "#5F9EA0");
         createFindByCommentField();
         gridReaction.setColumns("commentId", "description", "created");
+        gridReaction.getColumns().get(1).setHeader("Reaction");
         Div titleDivReaction = new Div();
-        H3 titleReaction = new H3("REACTIONS FOT COMMENT");
+        H3 titleReaction = new H3("REACTIONS FOR COMMENT");
         titleReaction.getStyle().set("font-size", "16px");
         titleReaction.getStyle().set("font-weight", "bold");
         titleReaction.getStyle().set("margin", "0");

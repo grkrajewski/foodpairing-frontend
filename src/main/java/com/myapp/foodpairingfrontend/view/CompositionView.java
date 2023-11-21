@@ -36,6 +36,8 @@ public class CompositionView extends VerticalLayout {
         buttonBar.getComposition().getStyle().set("font-weight", "bold");
 
         gridDish.setColumns("id", "name", "readyInMinutes", "servings", "recipeUrl");
+        gridDish.getColumns().get(0).setHeader("Dish Id");
+        gridDish.getColumns().get(1).setHeader("Dish Name");
         Div titleDivDish = new Div();
         H3 titleDish = new H3("DISHES IN \"FOODPAIRING\" DATABASE");
         titleDish.getStyle().set("font-size", "16px");
@@ -53,6 +55,7 @@ public class CompositionView extends VerticalLayout {
         gridDish.asSingleSelect().addValueChangeListener(event -> dishToCompositionForm.setDish(gridDish.asSingleSelect().getValue()));
 
         gridComposition.setColumns("id", "dishId", "drinkId", "created");
+        gridComposition.getColumns().get(0).setHeader("Composition Id");
         Div titleDivComposition = new Div();
         H3 titleComposition = new H3("COMPOSITIONS");
         titleComposition.getStyle().set("font-size", "16px");

@@ -41,6 +41,11 @@ public class DrinkView extends VerticalLayout {
         buttonBar.getDrink().getStyle().set("font-weight", "bold");
 
         gridDrink.setColumns("id", "name", "alcoholic", "glass", "instructions");
+        gridDrink.getColumns().get(0).setHeader("Drink Id");
+        gridDrink.getColumns().get(1).setHeader("Drink Name");
+        gridDrink.getColumns().get(2).setHeader("Type Of Drink");
+        gridDrink.getColumns().get(3).setHeader("Proposed Glass");
+        gridDrink.getColumns().get(4).setHeader("Recipe");
         Div titleDiv = new Div();
         H3 title = new H3("DRINKS IN DATABASE");
         title.getStyle().set("font-size", "16px");
@@ -67,6 +72,7 @@ public class DrinkView extends VerticalLayout {
         addNewIngredient.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         addNewIngredient.getStyle().set("background-color", "#5F9EA0");
         gridDrinkIngredient.setColumns("drinkId", "name", "measure");
+        gridDrinkIngredient.getColumns().get(1).setHeader("Drink Ingredient Name");
         Div titleDivDrinkIngredient = new Div();
         H3 titleDrinkIngredient = new H3("MODIFY THE DRINK INGREDIENTS BELOW AS YOU WANT");
         titleDrinkIngredient.getStyle().set("font-size", "16px");
